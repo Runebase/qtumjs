@@ -15,9 +15,9 @@ module.exports = {
 		extensions: ['.ts', '.js']
 	},
 	output: {
-		filename: 'qtum.js',
+		filename: 'runebase.js',
 		path: path.resolve(__dirname, 'dist'),
-		library: "Qtum",
+		library: "Runebase",
 		libraryTarget: "umd",
 	}
 }

@@ -1,4 +1,4 @@
-import { QtumRPCRaw } from "./QtumRPCRaw"
+import { RunebaseRPCRaw } from "./RunebaseRPCRaw"
 
 export interface IGetInfoResult {
   version: number,
@@ -35,7 +35,7 @@ export interface IRPCSendToContractRequest {
   datahex: string
 
   /**
-   * The amount in QTUM to send. eg 0.1, default: 0
+   * The amount in RUNEBASE to send. eg 0.1, default: 0
    */
   amount?: number | string
 
@@ -45,7 +45,7 @@ export interface IRPCSendToContractRequest {
   gasLimit?: number
 
   /**
-   * Qtum price per gas unit, default: 0.00000001, min:0.00000001
+   * Runebase price per gas unit, default: 0.00000001, min:0.00000001
    */
   gasPrice?: number | string
 
@@ -66,7 +66,7 @@ export interface IRPCSendToContractResult {
    */
   txid: string,
   /**
-   * QTUM address of the sender.
+   * RUNEBASE address of the sender.
    */
   sender: string,
   /**
@@ -162,7 +162,7 @@ export interface IRPCGetTransactionReceiptRequest {
 }
 
 /**
- * Transaction receipt returned by qtumd
+ * Transaction receipt returned by runebased
  */
 export interface IRPCGetTransactionReceiptBase {
   blockHash: string
@@ -225,7 +225,7 @@ export interface ILogFilter {
 }
 
 /**
- * The raw log data returned by qtumd, not ABI decoded.
+ * The raw log data returned by runebased, not ABI decoded.
  */
 export interface ILogEntry extends IRPCGetTransactionReceiptBase {
   /**
@@ -282,7 +282,7 @@ export interface IPromiseCancel<T> extends Promise<T> {
   cancel: () => void
 }
 
-export class QtumRPC extends QtumRPCRaw {
+export class RunebaseRPC extends RunebaseRPCRaw {
   private _hasTxWaitSupport: boolean | undefined
 
   public getInfo(): Promise<IGetInfoResult> {

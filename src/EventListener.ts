@@ -1,6 +1,6 @@
 import { EventEmitter } from "eventemitter3"
 
-import { QtumRPC, IRPCWaitForLogsRequest, IPromiseCancel } from "./QtumRPC"
+import { RunebaseRPC, IRPCWaitForLogsRequest, IPromiseCancel } from "./RunebaseRPC"
 import { ContractLogDecoder } from "./abi"
 import { IContractEventLogs, IContractEventLog } from "./Contract"
 
@@ -13,7 +13,7 @@ export interface ICancellableEventEmitter extends EventEmitter {
 export class EventListener {
   // TODO filter out unparseable logs
 
-  constructor(private rpc: QtumRPC, private logDecoder: ContractLogDecoder) {
+  constructor(private rpc: RunebaseRPC, private logDecoder: ContractLogDecoder) {
   }
 
   /**

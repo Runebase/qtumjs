@@ -1,28 +1,28 @@
-The QTUM JavaScript library for Smart Contract development.
+The RUNEBASE JavaScript library for Smart Contract development.
 
-See [documentation](https://qtumproject.github.io/qtumjs-doc/).
+See [documentation](https://runebaseproject.github.io/runebasejs-doc/).
 
-See [中文 API 文档](https://qtumproject.github.io/qtumjs-doc-cn/).
+See [中文 API 文档](https://runebaseproject.github.io/runebasejs-doc-cn/).
 
-See [companion tutorial](https://github.com/qtumproject/qtumbook/blob/master/en/part2/erc20-js.md).
+See [companion tutorial](https://github.com/runebaseproject/runebasebook/blob/master/en/part2/erc20-js.md).
 
 # Install
 
 ```
-npm install qtumjs
+npm install runebasejs
 ```
 
 This is a sample code snippet that transfer ERC20 tokens:
 
 ```js
 import {
-  QtumRPC,
-} from "qtumjs"
+  RunebaseRPC,
+} from "runebasejs"
 
 const repoData = require("./solar.json")
-const qtum = new Qtum("http://qtum:test@localhost:3889", repoData)
+const runebase = new Runebase("http://runebase:test@localhost:3889", repoData)
 
-const myToken = qtum.contract("zeppelin-solidity/contracts/token/CappedToken.sol")
+const myToken = runebase.contract("zeppelin-solidity/contracts/token/CappedToken.sol")
 
 async function transfer(fromAddr, toAddr, amount) {
   const tx = await myToken.send("transfer", [toAddr, amount], {
@@ -37,7 +37,7 @@ async function transfer(fromAddr, toAddr, amount) {
 }
 ```
 
-The [full source code](https://github.com/qtumproject/qtumbook-mytoken-qtumjs-cli).
+The [full source code](https://github.com/runebaseproject/runebasebook-mytoken-runebasejs-cli).
 
 > This example uses async/await (supported natively by Node 8+).
 
@@ -45,16 +45,16 @@ The [full source code](https://github.com/qtumproject/qtumbook-mytoken-qtumjs-cl
 
 ```
 docker run -it --rm \
-  --name qtumjs \
+  --name runebasejs \
   -v `pwd`:/dapp \
   -p 5889:3889 \
-  hayeah/qtumportal
+  hayeah/runebaseportal
 ```
 
 Enter into container:
 
 ```
-docker exec -it qtumjs sh
+docker exec -it runebasejs sh
 ```
 
 Generate initial blocks:

@@ -1,14 +1,14 @@
-import { QtumRPC } from "./QtumRPC"
+import { RunebaseRPC } from "./RunebaseRPC"
 import { IContractsRepoData, ContractsRepo } from "./ContractsRepo"
 import { Contract } from "./Contract"
 
 /**
- * The `Qtum` class is an instance of the `qtumjs` API.
+ * The `Runebase` class is an instance of the `runebasejs` API.
  *
- * @param providerURL URL of the qtumd RPC service.
+ * @param providerURL URL of the runebased RPC service.
  * @param repoData Information about Solidity contracts.
  */
-export class Qtum extends QtumRPC {
+export class Runebase extends RunebaseRPC {
   private repo: ContractsRepo
 
   constructor(providerURL: string, repoData?: IContractsRepoData) {

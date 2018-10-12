@@ -2,7 +2,7 @@ pragma solidity ^0.4.18;
 
 import "./LogOfDependantContractChild.sol";
 
-// https://github.com/qtumproject/qtumjs/issues/4
+// https://github.com/runebaseproject/runebasejs/issues/4
 contract LogOfDependantContract {
   LogOfDependantContractChild testContract;
 

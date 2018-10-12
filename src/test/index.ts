@@ -1,10 +1,10 @@
 import { assert } from "chai"
 
-import { QtumRPC } from "../QtumRPC"
+import { RunebaseRPC } from "../RunebaseRPC"
 
-export const rpcURL = "http://qtum:test@localhost:5889"
+export const rpcURL = "http://user:pass@localhost:19432"
 
-export const rpc = new QtumRPC(rpcURL)
+export const rpc = new RunebaseRPC(rpcURL)
 
 export const repoData = require("../../solar.development.json")
 
